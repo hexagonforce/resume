@@ -1,0 +1,109 @@
+%-------------------------------------------------------------------------------
+% CONFIGURATIONS
+%-------------------------------------------------------------------------------
+% A4 paper size by default, use 'letterpaper' for US letter
+\documentclass[11pt, a4paper]{russell}
+% Configure page margins with geometry
+\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+
+% Specify the location of the included fonts
+\fontdir[fonts/]
+
+% Color for highlights
+% russell Colors: russell-emerald, russell-skyblue, russell-red, russell-pink, russell-orange
+%                 russell-nephritis, russell-concrete, russell-darknight, russell-purple
+\colorlet{russell}{russell-orange}
+% Uncomment if you would like to specify your own color
+% \definecolor{russell}{HTML}{CA63A8}
+
+% Colors for text
+% Uncomment if you would like to specify your own color
+% \definecolor{darktext}{HTML}{414141}
+ \definecolor{text}{HTML}{333333}
+% \definecolor{graytext}{HTML}{5D5D5D}
+% \definecolor{lighttext}{HTML}{999999}
+
+% Set false if you don't want to highlight section with russell color
+\setbool{acvSectionColorHighlight}{true}
+
+% If you would like to change the social information separator from a pipe (|) to something else
+\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+
+
+%-------------------------------------------------------------------------------
+%	PERSONAL INFORMATION
+%	Comment any of the lines below if they are not required
+%-------------------------------------------------------------------------------
+% Available options: circle|rectangle,edge/noedge,left/right
+% \photo[rectangle,noedge,right]{./profile.jpg}
+\name{Hyeong Seon}{Yoo}
+% \position{Software Architect{\enskip\cdotp\enskip}Security Expert}
+\address{Parañaque City, National Capital Region, Philippines}
+
+\dateofbirth{1999-12-30}
+\mobile{09082279581}
+\email{sylvesteryoo@naver.com}
+\github{github.com/hexagonforce\\}
+
+%\homepage{www.posquit0.com}
+\linkedin{https://www.linkedin.com/in/hyeongseonyoo/}
+% \gitlab{gitlab-id}
+% \stackoverflow{SO-id}{SO-name}
+% \twitter{@twit}
+% \skype{skype-id}
+% \reddit{reddit-id}
+% \medium{madium-id}
+% \kaggle{kaggle-id}
+% \googlescholar{googlescholar-id}{name-to-display}
+%% \firstname and \lastname will be used
+% \googlescholar{googlescholar-id}{}
+% \extrainfo{extra information}
+
+% \quote{``Simplicity is deceptively complicated."}
+\recipient
+  {Ericsson-LG}
+  {12-13F, LG Gasan Digital Center,
+189, Gasan digital 1-ro, Geumcheon-gu,
+Seoul, 08503, Republic of Korea}
+% The date on the letter, default is the date of compilation
+\letterdate{\today}
+% The title of the letter
+\lettertitle{Application for Packet Core R{\&}D Software Developer}
+% How the letter is opened
+\letteropening{Dear Sir/Madam,}
+% How the letter is closed
+\letterclosing{Sincerely,}
+% Any enclosures with the letter
+% \letterenclosure[Attached]{Curriculum Vitae}
+
+%-------------------------------------------------------------------------------
+ %	BIBLIOGRAPHY
+ %-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+\begin{document}
+
+% Print the header with above personal informations
+% Give optional argument to change alignment(C: center, L: left, R: right)
+\makecvheader[L]
+
+% Print the footer with 3 arguments(<left>, <center>, <right>)
+% Leave any of these blank if they are not needed
+\makecvfooter
+  {\today}
+  {Hyeong Seon Yoo ~~~·~~~ Cover Letter}
+  {}
+
+\makelettertitle
+
+\begin{cvletter}
+    Thank you for this opportunity for the Ericsson Packet Core R\&D developer position. The two areas of interest that I have worked on for the past few years are C\+\+ and networking. I particularly enjoy discovering new features related to C\+\+ programming every day, such as the many features of the Standard Template Library. I think I will be a strong addition to the team; in addition to my academic achievements, my experience and communication skills will be an asset to your company.
+
+    I have a strong background in data structures and algorithms through my participation in various ICPC competitions through my school's programming team. Throughout these competitions, I have used the C\+\+ and Python languages extensively. I have also used C++ and Python to accomplish school projects and my thesis. I also have the patience and determination to learn from difficult code and documentation, which culminated in my publication of papers on Software-defined Networking in IEEE recognized conferences on Software-defined Networking.
+
+    While I might not be directly experienced in 5G or Packet Core networking, I have the fundamentals and research experience that will be an asset to your company. In addition, my primary field of interest in computer science is networking and lower-level programming, which is aligned with your company's vision of a more connected future. I hope for your consideration, and I would love to work with you in the future.
+\end{cvletter}
+
+
+\makeletterclosing
+\end{document}
