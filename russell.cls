@@ -74,8 +74,8 @@
 \RequirePackage{makecell}
 
 \RequirePackage[CJKspace]{xeCJK}
-\setCJKmainfont{NanumBarunGothic}
-\setCJKsansfont{NanumBarunGothic}
+\setCJKmainfont{Noto Sans CJK KR}
+\setCJKsansfont{Noto Sans CJK KR}
 %-------------------------------------------------------------------------------
 %                Configuration for directory locations
 %-------------------------------------------------------------------------------
@@ -632,7 +632,7 @@
 % Define an entry of cv information
 % Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}
 \newcommand*{\cventry}[5]{%
-  \vspace{-2.0mm}
+  %\vspace{-2.0mm}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 5cm} R{5cm}}
@@ -642,6 +642,7 @@
       \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
     \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}
   \end{tabular*}%
+  \par\addvspace{2mm} % This ensures the next entry starts after a clean break
 }
 
 % Define an environment for cvsubentry
