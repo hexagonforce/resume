@@ -1,25 +1,35 @@
 name: English Resume
-
 on:
   push:
-    branches: [ "main" ]
+    branches: [ main ]
 
 jobs:
-  build:
+  build_and_release:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-      - name: Checkout main
+      - name: Checkout
         uses: actions/checkout@v4
-      - name: Compile LaTeX document
-        uses: xu-cheng/latex-action@v4
+
+      - name: Get Current Date
+        id: date
+        run: echo "date=$(date +'%Y.%m.%d')" >> $GITHUB_OUTPUT
+
+      - name: Compile LaTeX
+        uses: xu-cheng/latex-action@v3
         with:
           root_file: resume_en.tex
-          extra_system_packages: "font-noto-cjk"
-          latexmk_use_xelatex: true
-          texlive_version: 2025
-      - name: Upload PDF file
-        uses: actions/upload-artifact@v6
-        with:
-          name: PDF
-          path: resume_en.pdf
+          extra_system_packages: "font-noto-cjk-kr"
+          latexmk_use_xelatex: true 
 
+      - name: Create Date-Based Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.date.outputs.date }}
+          name: Resume Update ${{ steps.date.outputs.date }}
+          files: resume_en.pdf
+          # This ensures 'latest' always points to this newest date
+          make_latest: true 
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
